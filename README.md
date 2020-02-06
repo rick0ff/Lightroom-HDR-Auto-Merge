@@ -8,12 +8,14 @@ When the queue is filled you can wait for your computer to process the jobs line
 ## Requirements
 * **Lightroom CC or Lightroom 6** (if your version allows queuing of HDRs it should work, let me know if that applies to older versions as well)
 * **Windows** (due to AutoHotKey only being available for Windows)
+* **English** as Lightroom language, though I'll be trying to support all languages in the near future
 
 ## Organizing the pictures to merge in Lightroom
 For the script to work properly you have to 
-* put all the pictures to be merged in a separate collection
-* tag them with a color (press "6" (green) to "9" (blue) in Lightroom)
+* tag all the images to be merged in the same batch with an otherwise unused color (press "6" (green), "7" (yellow), "8" (green) or "9" (blue) in Lightroom)
 ![LR sample library](https://github.com/rick0ff/Lightroom-HDR-Auto-Merge/blob/master/images/lr-sample-library.PNG)
+* create a smart collection that filters on that color
+![LR sample collection](https://github.com/rick0ff/Lightroom-HDR-Auto-Merge/blob/master/images/lr-sample-smart-collection.PNG)
 **Note: Per batch run the HDRs must have the same amount of single pictures.** If you mix HDRs based on different amount of files (e.g. 3 and 5) the software won't be able to differentiate.
 
 ## Two options to use the script
@@ -30,14 +32,16 @@ b. Advanced: Download and install [AutoHotkey](https://www.autohotkey.com/) and 
 1. Press Hotkey (Ctrl+Shift+Alt+J) to start the tool
 1. Set the parameters for the batch job and click OK <screen>
 1. Run
-1. Wait for the script to fill your queue. If you want to exit press "ESC". Then wait until the queue is fully processed. 
+1. Wait for the script to fill your queue. If you want **to exit press "ESC"**. Then wait until the queue is fully processed. 
 
 ## Options of the script [defaults]
 The script covers the following options to fit your individual HDR needs:
-* Amount of Pictures per bracket (usually 3, 5 or 7) that results in one generated HDR
-* Amount of HDRs to generate
-* Time for pauses. This setting lets you set the length of pauses between each the queuing of each HDR. On a less powerful system it is recommended to increase the amount. If your rig is powerful you can decrease it.
-* End action...
-
+* Bracket size: The amount of pictures per bracket (usually 3, 5 or 7) that results in **one generated HDR** [3]
+* Amount of HDRs: Define how often the merging of brackets should be repeated [10]
+* Wait time between HDRs: Time in seconds to pause before the next bracket is being queued. On a less powerful system it is recommended to increase the amount. If your rig is powerful you can try to lower this value. In the end it does not really matter, since your computer usually has way longer to generate an HDR than queueing the next one. [5]
+* Keypress for end action: For the script to work properly the queued pictures must be removed from the used smart collection, so the next bracket starts from the first image in the collection. This is achieved by pressing the same button as you color an image. [6]
+* Keep showing a progress bar: Lets you see the progress of the batch. [on] ![progress-bar](https://github.com/rick0ff/Lightroom-HDR-Auto-Merge/blob/master/images/progress-bar.PNG)
+* Keep checking for merging errors and skip them: If Lightroom can't merge an HDR the Lightroom error will be closed automatically so the rest of the batch can be processed. If disabled, the process will be stopped. [on]
+![parameters](https://github.com/rick0ff/Lightroom-HDR-Auto-Merge/blob/master/images/parameters.PNG)
 ## Further development
 For now the script fits my needs. Let me know if you're having problems or futher ideas.
