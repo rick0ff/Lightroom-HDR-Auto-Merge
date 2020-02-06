@@ -12,7 +12,8 @@ When the queue is filled you can wait for your computer to process the jobs line
 ## Organizing the pictures to merge in Lightroom
 For the script to work properly you have to 
 * put all the pictures to be merged in a separate collection
-* tag them with a color (press "6" (green) to "0" (xx) in Lightroom)
+* tag them with a color (press "6" (green) to "9" (blue) in Lightroom)
+![LR sample library](https://github.com/rick0ff/Lightroom-HDR-Auto-Merge/blob/master/images/lr-sample-library.PNG)
 **Note: Per batch run the HDRs must have the same amount of single pictures.** If you mix HDRs based on different amount of files (e.g. 3 and 5) the software won't be able to differentiate.
 
 ## Two options to use the script
